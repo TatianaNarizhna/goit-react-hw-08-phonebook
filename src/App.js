@@ -17,7 +17,7 @@ import ContactsView from "./views/ContactsView/ContactsView";
         <AppBar />
 
         <Switch>
-        <Route path="/" exact component={HomePageView}/>
+        <Route path="/" exact component={HomePageView} />
         <Route path="/register" component={RegisterView}/>
         <Route path="/login" component={LoginView}/>
         <Route path="/contacts " component={ContactsView} />

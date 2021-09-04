@@ -10,7 +10,11 @@ const initialState = {
 const authSlice = createSlice({
     name: 'auth',
     initialState,
-    extraReducers: {},
+    extraReducers: {
+        [authOperations.register.fulfilled](state, action) {
+
+        }
+    },
 });
 
-export default authSlice;
+export default authSlice.reducer;

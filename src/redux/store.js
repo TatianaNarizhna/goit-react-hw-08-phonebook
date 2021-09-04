@@ -22,7 +22,7 @@ const middleware = [...getDefaultMiddleware({
   }
 })];
 
-const contactsPersistConfig = {
+const authPersistConfig = {
   key: 'auth',
   storage,
   // blacklist: ['filter'],
@@ -36,7 +36,7 @@ const contactsPersistConfig = {
 const store = configureStore({
     // reducer: rootReducer,
     reducer: {
-      auth: persistReducer(contactsPersistConfig, authReducer),
+      auth: persistReducer(authPersistConfig, authReducer),
       contacts: contactsReducer,
     },
     middleware,
