@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import s from "./AuthNav.module.css";
+import s from "../AuthNav/AuthNav.module.css";
 
  function AuthNav() {
     return (
@@ -8,18 +8,18 @@ import s from "./AuthNav.module.css";
         <NavLink
           to="/register"
           exact
-          style={s.link}
-          activeStyle={s.activeLink}
+          className={s.link}
+          activeClassName={s.activeLink}
         >
-          Регистрация
+          Register
         </NavLink>
         <NavLink
           to="/login"
           exact
-          style={s.link}
-          activeStyle={s.activeLink}
+          className={s.link}
+          activeClassName={s.activeLink}
         >
-          Логин
+          Login
         </NavLink>
       </div>
     );

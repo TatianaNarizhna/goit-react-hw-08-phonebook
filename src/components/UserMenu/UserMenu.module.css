@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  margin-right: 6px;
+}
+
+.name {
+  font-family: 'Lucida Sans', sans-serif;
+  font-weight: 900;
+  margin-right: 15px;
+}

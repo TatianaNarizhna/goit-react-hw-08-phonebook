@@ -32,16 +32,16 @@ import s from "./RegisterView.module.css";
 
 
     return (
-        <div>
+        <div className={s.RegisterContainer}>
       <h1>Register Page</h1>
 
-      <form onSubmit={handleSubmit} style={s.form} autoComplete="off">
-        <label style={s.label}>
+      <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
+        <label className={s.label}>
           Name
           <input type="text" name="name" value={name} onChange={handleChange} />
         </label>
 
-        <label style={s.label}>
+        <label className={s.label}>
           Email
           <input
             type="email"
@@ -51,7 +51,7 @@ import s from "./RegisterView.module.css";
           />
         </label>
 
-        <label style={s.label}>
+        <label className={s.label}>
           Password
           <input
             type="password"

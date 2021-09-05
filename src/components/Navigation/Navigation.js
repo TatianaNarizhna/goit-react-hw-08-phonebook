@@ -19,7 +19,7 @@ const Navigation = () => (
        <NavLink to="/login" className={s.link} activeClassName={s.activeLink}>
           Login
        </NavLink> */}
-       <hr />
+       {/* <hr /> */}
     </nav>
 );
 

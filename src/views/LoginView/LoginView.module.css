@@ -1,5 +1,12 @@
+.LoginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .form {
-  width: 320;
+  width: 320px;
 }
 
 .label {

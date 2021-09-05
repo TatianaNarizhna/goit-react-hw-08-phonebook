@@ -29,11 +29,11 @@ function LoginView() {
   }
 
     return (
-      <div>
+      <div className={s.LoginContainer}>
       <h1>Login page</h1>
 
-      <form onSubmit={handleSubmit} style={s.form} autoComplete="off">
-        <label style={s.label}>
+      <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
+        <label className={s.label}>
           Email
           <input
             type="email"
@@ -43,7 +43,7 @@ function LoginView() {
           />
         </label>
 
-        <label style={s.label}>
+        <label className={s.label}>
           Password
           <input
             type="password"
