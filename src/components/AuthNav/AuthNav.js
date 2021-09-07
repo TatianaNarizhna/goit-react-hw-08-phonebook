@@ -21,6 +21,7 @@ import s from "../AuthNav/AuthNav.module.css";
         >
           Login
         </NavLink>
+ 
       </div>
     );
   }

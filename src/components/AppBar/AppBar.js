@@ -13,6 +13,7 @@ import s from "../AppBar/AppBar.module.css"
             <div className={s.NavigContainer}>
             <Navigation />
             {isLoggedIn ? <UserMenu /> : <AuthNav />}
+            
             </div>
         </header>
     )

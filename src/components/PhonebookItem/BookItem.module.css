@@ -3,6 +3,11 @@
   justify-content: space-between;
 }
 
+.name,
+.number {
+  margin-right: 15px;
+}
+
 .buttonList {
   display: flex;
   align-items: center;

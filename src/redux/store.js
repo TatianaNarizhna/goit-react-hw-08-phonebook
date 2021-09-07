@@ -25,7 +25,6 @@ const middleware = [...getDefaultMiddleware({
 const authPersistConfig = {
   key: 'auth',
   storage,
-  // blacklist: ['filter'],
   whitelist: ['token'],
 }
 

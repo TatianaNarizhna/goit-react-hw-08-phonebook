@@ -5,8 +5,8 @@ import s from "./BookItem.module.css";
 const PhoneListItem = ({ id, name, number, onDeleteList }) => {
   return (
     <li className={s.list} key={id}>
-      <p>{name}:</p>
-      <p>{number}</p>
+      <p className={s.name}>{name}:</p>
+      <p className={s.number}>{number}</p>
       <div className={s.buttonList}>
       <button className={s.button} onClick={() => onDeleteList(id)}>
         Delete

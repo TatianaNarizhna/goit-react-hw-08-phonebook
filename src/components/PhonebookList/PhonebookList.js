@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import  contactsOperations  from '../../redux/contacts-operations';
 import PhoneBookItem from "../PhonebookItem/PhoneBookItem";
 import { getVisibleContacts, getLoading } from "../../redux/contacts-selector";
+import s from "./PhonebookList.module.css"
 // import PropTypes from "prop-types";
 
 const PhonebookList = ({ title }) => {
@@ -18,7 +19,7 @@ const PhonebookList = ({ title }) => {
 
   return (
     <div>
-      <h2>{title}</h2>
+      <h2 className={s.title}>{title}</h2>
       
       <ul>
         {contacts.map(({ id, name, number }) => (
