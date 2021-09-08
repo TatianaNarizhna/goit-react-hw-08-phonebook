@@ -1,43 +1,61 @@
+import { lazy, Suspense } from "react";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { Switch, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Switch } from "react-router-dom";
 import Container from "./components/Container/Container";
 import AppBar from "./components/AppBar/AppBar";
-import HomePageView from "./views/HomePageView/HomePageView";
-import RegisterView from "./views/RegisterView/RegisterView";
-import LoginView from "./views/LoginView/LoginView";
-import ContactsView from "./views/ContactsView/ContactsView";
+import PrivateRoute from "./components/PrivateRoute";
+import PublicRoute from "./components/PublicRoute";
 import authOperations from "./redux/auth/auth-operations";
-// import Input from "./components/ContactForm/InputForm";
-// import Filter from "./components/Filter/Filter";
-// import PhonebookList  from "./components/PhonebookList/PhonebookList";
+import authSelectors from "./redux/auth/auth-selectors";
+// import HomePageView from "./views/HomePageView/HomePageView";
+// import RegisterView from "./views/RegisterView/RegisterView";
+// import LoginView from "./views/LoginView/LoginView";
+// import ContactsView from "./views/ContactsView/ContactsView";
+
+const HomePageView = lazy(() => import("./views/HomePageView/HomePageView" /* webpackChunkName: 'home-page-view' */ ));
+const RegisterView = lazy(() => import("./views/RegisterView/RegisterView" /* webpackChunkName: 'register-view' */));
+const LoginView = lazy(() => import("./views/LoginView/LoginView" /* webpackChunkName: 'login-view' */));
+const ContactsView = lazy(() => import("./views/ContactsView/ContactsView" /* webpackChunkName: 'contacts-view' */));
 
 
   function App() {
     const dispatch = useDispatch();
+    const isLoadingCurrentUser = useSelector(authSelectors.getIsLoadingCurrentUser);
 
     useEffect(() => {
       dispatch(authOperations.fetchCurrentUser())
     }, [dispatch]);
 
     return (
-      <Container>
+      !isLoadingCurrentUser && (
+        <Container>
         <AppBar />
 
-        <Switch>
-        <Route path="/" exact component={HomePageView} />
-        <Route path="/register" component={RegisterView}/>
-        <Route path="/login" component={LoginView}/>
-        <Route path="/contacts" exact component={ContactsView} />
-        </Switch>
+         <Suspense fallback={<h1>Loading...</h1>}>
 
-        {/* <h1>Phonebook</h1>
-        <Input />
-        <Filter />
-        <PhonebookList
-          title="Contacts"
-        /> */}
-      </Container>
+           <Switch>
+            <PublicRoute path="/" exact>
+              <HomePageView />
+            </PublicRoute>
+
+            <PublicRoute path="/register" restricted>
+              <RegisterView />
+            </PublicRoute>
+
+            <PublicRoute path="/login" restricted redirectTo="/contacts">
+              <LoginView />
+            </PublicRoute>
+
+            <PrivateRoute path="/contacts" exact>
+              <ContactsView />
+            </PrivateRoute>
+
+          </Switch>
+         </Suspense>
+
+        </Container>
+      )
     );
 }
 
