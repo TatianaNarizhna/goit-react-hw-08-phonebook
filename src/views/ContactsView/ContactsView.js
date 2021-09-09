@@ -5,9 +5,7 @@ import Filter from "../../components/Filter/Filter";
 import PhonebookList from "../../components/PhonebookList/PhonebookList";
 import s from "./ContactsView.module.css"
 
-
 function ContactsView() {
-
 
     return (
         <Container>

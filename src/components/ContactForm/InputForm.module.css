@@ -21,6 +21,7 @@
 .button {
   margin-top: 20px;
   width: 150px;
+  color: black;
   border: none;
   cursor: pointer;
   background-color: rgb(184, 202, 236);

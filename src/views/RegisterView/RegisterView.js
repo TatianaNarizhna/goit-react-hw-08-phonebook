@@ -1,7 +1,9 @@
+import Button from '@material-ui/core/Button';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import  authOperations  from "../../redux/auth/auth-operations";
 import s from "./RegisterView.module.css";
+
  
  function RegisterView() {
    const dispatch = useDispatch();
@@ -30,38 +32,61 @@ import s from "./RegisterView.module.css";
     setPassword('');
    };
 
-
     return (
         <div className={s.RegisterContainer}>
-      <h1>Register Page</h1>
+      <h2 className={s.title}>Register Page</h2>
 
       <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
-        <label className={s.label}>
+        <div class="mb-3">
+        <label className={s.label} for="exampleFormControlInput1" class="form-label"/>
           Name
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
+          <input 
+          type="text" 
+          name="name" 
+          value={name} 
+          class="form-control" 
+            id="exampleFormControlInput1"
+            placeholder="please, enter your name"
+          onChange={handleChange} />
+  
+        </div>
+       
 
-        <label className={s.label}>
+  <div class="mb-3">
+  <label className={s.label}>
           Email
           <input
             type="email"
             name="email"
             value={email}
+            class="form-control" 
+            id="exampleFormControlInput1"
+             placeholder="name@example.com"
             onChange={handleChange}
           />
         </label>
+  </div>
 
-        <label className={s.label}>
+     <div class="mb-3">
+     <label className={s.label}>
           Password
           <input
             type="password"
             name="password"
             value={password}
+            class="form-control" 
+            id="exampleFormControlInput1" 
+            placeholder="more then 5 symbols"
             onChange={handleChange}
           />
         </label>
+     </div>
 
-        <button type="submit">Register</button>
+        <Button type="submit" variant="contained" color="primary" >
+            Register
+          </Button>
+
+        {/* <button type="submit">Register</button> */}
       </form>
     </div>
     )

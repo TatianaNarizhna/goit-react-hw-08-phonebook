@@ -1,11 +1,12 @@
+import Button from '@material-ui/core/Button';
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import  authOperations  from "../../redux/auth/auth-operations";
 import s from "./LoginView.module.css";
 
 
-function LoginView() {
 
+function LoginView() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -30,30 +31,41 @@ function LoginView() {
 
     return (
       <div className={s.LoginContainer}>
-      <h1>Login page</h1>
+      <h2 className={s.title}>Login page</h2>
 
       <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
-        <label className={s.label}>
+        <div class="mb-3">
+        <label className={s.label} for="exampleFormControlInput1" class="form-label"/>
           Email
           <input
             type="email"
             name="email"
             value={email}
+            class="form-control" 
+            id="exampleFormControlInput1"
+             placeholder="name@example.com"
             onChange={handleChange}
           />
-        </label>
+        </div>
+     
 
-        <label className={s.label}>
+    <div class="mb-3">
+    <label className={s.label}>
           Password
           <input
             type="password"
             name="password"
             value={password}
+            class="form-control" 
+            id="exampleFormControlInput1" 
+            placeholder="more then 5 symbols"
             onChange={handleChange}
           />
         </label>
-
-        <button type="submit">Enter</button>
+    </div>
+        <Button type="submit" variant="contained" color="primary">
+            Enter
+          </Button>
       </form>
     </div>
     )

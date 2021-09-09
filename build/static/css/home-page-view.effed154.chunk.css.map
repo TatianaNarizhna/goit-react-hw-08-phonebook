@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/views/HomePageView/HomePageView.module.css"],"names":[],"mappings":"AAAA,2BACE,gBAAiB,CACjB,eAAgB,CAChB,iBACF","file":"home-page-view.effed154.chunk.css","sourcesContent":[".title {\r\n  margin-top: 100px;\r\n  font-weight: 500;\r\n  text-align: center;\r\n}\r\n"]}

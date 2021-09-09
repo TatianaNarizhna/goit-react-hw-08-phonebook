@@ -1,3 +1,4 @@
+import Button from '@material-ui/core/Button';
 import React from "react";
 import PropTypes from "prop-types";
 import s from "./BookItem.module.css";
@@ -8,9 +9,13 @@ const PhoneListItem = ({ id, name, number, onDeleteList }) => {
       <p className={s.name}>{name}:</p>
       <p className={s.number}>{number}</p>
       <div className={s.buttonList}>
-      <button className={s.button} onClick={() => onDeleteList(id)}>
+      <Button type="button" 
+      variant="contained" 
+      color="secondary"
+      className={s.button} 
+      onClick={() => onDeleteList(id)}>
         Delete
-      </button>
+      </Button>
       </div>
     
     </li>

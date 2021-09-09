@@ -1,3 +1,4 @@
+import Button from '@material-ui/core/Button';
 import { useState, useRef } from "react";
 import { connect } from "react-redux";
 import contactOperations from "../../redux/contacts-operations";
@@ -73,9 +74,12 @@ import s from "./InputForm.module.css";
               onChange={inputValue}
             />
           </label>
-          <button type="submit" className={s.button}>
+          <Button type="submit"
+          variant="contained" 
+          color="secondary"
+           className={s.button}>
             Add contact
-          </button>
+          </Button>
         </form>
       </div>
     );

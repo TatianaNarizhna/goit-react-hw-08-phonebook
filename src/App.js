@@ -8,10 +8,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import PublicRoute from "./components/PublicRoute";
 import authOperations from "./redux/auth/auth-operations";
 import authSelectors from "./redux/auth/auth-selectors";
-// import HomePageView from "./views/HomePageView/HomePageView";
-// import RegisterView from "./views/RegisterView/RegisterView";
-// import LoginView from "./views/LoginView/LoginView";
-// import ContactsView from "./views/ContactsView/ContactsView";
 
 const HomePageView = lazy(() => import("./views/HomePageView/HomePageView" /* webpackChunkName: 'home-page-view' */ ));
 const RegisterView = lazy(() => import("./views/RegisterView/RegisterView" /* webpackChunkName: 'register-view' */));
