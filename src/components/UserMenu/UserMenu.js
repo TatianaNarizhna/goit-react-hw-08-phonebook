@@ -15,7 +15,10 @@ import s from "./UserMenu.module.css"
         <div className={s.container}>
             <img src={avatar} alt="" width="45" className={s.avatar}/>
             <span className={s.name}>Welcome, {name}!</span>
-            <Button type="button" variant="contained" color="primary" onClick={() => dispatch(authOperations.logOut())}>
+            <Button type="button" 
+            variant="contained" 
+            color="primary" 
+            onClick={() => dispatch(authOperations.logOut())}>
                 LogOut
             </Button>
         </div>

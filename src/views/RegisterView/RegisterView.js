@@ -37,56 +37,51 @@ import s from "./RegisterView.module.css";
       <h2 className={s.title}>Register Page</h2>
 
       <form onSubmit={handleSubmit} className={s.form} autoComplete="off">
-        <div class="mb-3">
-        <label className={s.label} for="exampleFormControlInput1" class="form-label"/>
+        <div className="mb-3">
+        <label htmlFor="exampleFormControlInput1" className="form-label"/>
           Name
           <input 
           type="text" 
           name="name" 
           value={name} 
-          class="form-control" 
-            id="exampleFormControlInput1"
+          className="form-control" 
             placeholder="please, enter your name"
           onChange={handleChange} />
   
         </div>
        
 
-  <div class="mb-3">
-  <label className={s.label}>
+  <div className="mb-3">
+  <label className={s.label} />
           Email
           <input
             type="email"
             name="email"
             value={email}
-            class="form-control" 
-            id="exampleFormControlInput1"
+            className="form-control" 
              placeholder="name@example.com"
             onChange={handleChange}
           />
-        </label>
+        
   </div>
 
-     <div class="mb-3">
-     <label className={s.label}>
+     <div className="mb-3">
+     <label className={s.label} />
           Password
           <input
             type="password"
             name="password"
             value={password}
-            class="form-control" 
-            id="exampleFormControlInput1" 
+            className="form-control" 
             placeholder="more then 5 symbols"
             onChange={handleChange}
           />
-        </label>
+        
      </div>
 
         <Button type="submit" variant="contained" color="primary" >
             Register
           </Button>
-
-        {/* <button type="submit">Register</button> */}
       </form>
     </div>
     )
